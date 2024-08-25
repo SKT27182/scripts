@@ -102,7 +102,6 @@ class CustomFormatter(logging.Formatter):
         "DEBUG": COLOUR_MAPPING["CYAN"],
         "INFO": COLOUR_MAPPING["GREEN"],
         "VERBOSE": COLOUR_MAPPING["WHITE"],
-        "WATERFALL": COLOUR_MAPPING["WHITE"] + COLOUR_MAPPING["BOLD"],
         "WARNING": COLOUR_MAPPING["YELLOW"],
         "ERROR": COLOUR_MAPPING["RED"] + COLOUR_MAPPING["BOLD"],
         "CRITICAL": COLOUR_MAPPING["RED"]
@@ -213,13 +212,12 @@ def create_logger(
         "debug": logging.DEBUG,
         "info": logging.INFO,
         "verbose": verbose_level,
-        "waterfall": waterfall_level,
         "warning": logging.WARNING,
         "error": logging.ERROR,
         "critical": logging.CRITICAL,
     }
 
-    ## Adding custom log level for waterfall after info logging level
+    ## Adding custom log level verbose
     add_logging_level("verbose", verbose_level)
     level_to_int_map["verbose"] = verbose_level
 
